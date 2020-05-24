@@ -4,7 +4,6 @@
     <h1>Register for FroshIMs</h1>
     <form action="/register" method="post">
         <input name="name" placeholder="Name" type="text" />
-        <input name="email" placeholder="Email" type="email">
         <select name="dorm" id="dorm">
             <option disabled selected value="">Dorm</option>
             <option value="Apley Court">Apley Court</option>
@@ -12,4 +11,18 @@
         </select>
         <input type="submit" value="Register" />
     </form>
+    <a href="/registered">see who else registered</a>
+
+    <script>
+        document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector('input').value) {
+                alert('You must provide your name!');
+                return false;
+            } else if (!document.querySelector('select').value) {
+                alert('You must provide your dorm!');
+                return false;
+            }
+            return true;
+        }
+    </script>
 {% endblock %}

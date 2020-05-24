@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <ul>
-        {% for student in students %}
-            <li>{{ student }}</li>
-        {% endfor %}
-    </ul>
+<h1>Registered</h1>
+<ul>
+    {% for student in students %}
+        <li>{{ student.0 }} {{ student.1 }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
